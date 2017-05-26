@@ -1,43 +1,4 @@
 
-GraphQL-Query-Compress
-======================
-
-Compress a GraphQL Query String
-
-<p/>
-<img src="https://nodei.co/npm/graphql-query-compress.png?downloads=true&stars=true" alt=""/>
-
-<p/>
-<img src="https://david-dm.org/rse/graphql-query-compress.png" alt=""/>
-
-About
------
-
-This is small utility function for compressing a
-[GraphQL](http://graphql.org/) query string by removing unnecessary
-whitespace characters and comments. It is intended to be used for
-compressing a query before it is sent over the network.
-
-Installation
-------------
-
-```shell
-$ npm install graphql-query-compress
-```
-
-Usage
------
-
-```js
-import compress from "graphql-query-compress"
-...
-query = compress(query)
-...
-```
-
-License
--------
-
 Copyright (c) 2017 Ralf S. Engelschall (http://engelschall.com/)
 
 Permission is hereby granted, free of charge, to any person obtaining
