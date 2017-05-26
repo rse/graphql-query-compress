@@ -56,7 +56,7 @@ module.exports = function (grunt) {
                         [ "browserify-header" ]
                     ],
                     browserifyOptions: {
-                        standalone: "GraphQLFrontend",
+                        standalone: "GraphQLQueryCompress",
                         debug: true
                     }
                 }
@@ -77,7 +77,7 @@ module.exports = function (grunt) {
                         "tokenizr"
                     ],
                     browserifyOptions: {
-                        standalone: "GraphQLFrontend",
+                        standalone: "GraphQLQueryCompress",
                         debug: false
                     }
                 }
