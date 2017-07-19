@@ -5,6 +5,7 @@
     "keywords":    [ "graphql", "query", "compress" ],
     "browser":     "./lib/graphql-query-compress.browser.js",
     "main":        "./lib/graphql-query-compress.node.js",
+    "license":     "MIT",
     "repository": {
         "type": "git",
         "url":  "https://github.com/rse/graphql-query-compress.git"
@@ -14,10 +15,6 @@
         "email": "rse@engelschall.com",
         "url":   "http://engelschall.com"
     },
-    "licenses": [{
-        "type": "MIT",
-        "url":  "http://opensource.org/licenses/MIT"
-    }],
     "homepage": "https://github.com/rse/graphql-query-compress",
     "bugs":     "https://github.com/rse/graphql-query-compress/issues",
     "dependencies": {
