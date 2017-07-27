@@ -30,9 +30,18 @@ Usage
 
 ```js
 import compress from "graphql-query-compress"
-...
+
+let query = `{
+    Accounts {
+        id
+        realname
+        username
+    }
+}`
+
 query = compress(query)
-...
+
+console.log(query)
 ```
 
 License
