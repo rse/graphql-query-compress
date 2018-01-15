@@ -25,7 +25,7 @@
 /*  external dependency  */
 import Tokenizr from "tokenizr"
 
-/*  the APU function: compress a GraphQL query string  */
+/*  the API function: compress a GraphQL query string  */
 function compactGraphQLQuery (query) {
     let lexer = new Tokenizr()
 
