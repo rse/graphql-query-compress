@@ -25,9 +25,8 @@
 /*  external dependency  */
 import Tokenizr from "tokenizr"
 
-/*  the API function: compress a GraphQL query string  */
-function compactGraphQLQuery (query) {
-    let lexer = new Tokenizr()
+const getLexicalAnalysisConfiguration = () => {
+    const lexer = new Tokenizr()
 
     /*  configure lexical analysis  */
     lexer.rule(/#[^\r\n]*(?=\r?\n)/,                       (ctx, match) => { ctx.accept("comment") })
@@ -45,14 +44,19 @@ function compactGraphQLQuery (query) {
     lexer.rule(/@/,                                        (ctx, match) => { ctx.accept("at") })
     lexer.rule(/:/,                                        (ctx, match) => { ctx.accept("colon") })
     lexer.rule(/./,                                        (ctx, match) => { ctx.accept("any") })
+
+    return lexer
+}
+
+const fetchAllTokensFromQuery = (query) => {
+    const lexer = getLexicalAnalysisConfiguration()
     lexer.input(query)
 
-    /*  fetch all parsed tokens  */
-    let tokens = lexer.tokens()
+    return lexer.tokens()
+}
 
-    /*  remove whitespace tokens at harmless positions  */
-    let output = ""
-    let re = /^(?:brace|bracket|parenthesis|comma|colon)$/
+const removeWhitespaceAtHarmlessPostionsFromTokens = (tokens) => {
+    const re = /^(?:brace|bracket|parenthesis|comma|colon)$/
     for (let i = 0; i < tokens.length; i++) {
         if (   tokens[i].type === "comment"
             || (   tokens[i].type === "ws"
@@ -64,14 +68,16 @@ function compactGraphQLQuery (query) {
             i--
         }
     }
+}
 
-    /*  assembly and return new query string  */
-    tokens.forEach((token) => {
-        output += token.value
-    })
-    return output
+/*  the API function: compress a GraphQL query string  */
+const compactGraphQLQuery = (query) => {
+    const tokens = fetchAllTokensFromQuery(query)
+
+    removeWhitespaceAtHarmlessPostionsFromTokens(tokens)
+
+    return tokens.reduce((current, token) => current + token.toString(), "")
 }
 
 /*  export the API function  */
 module.exports = compactGraphQLQuery
-
