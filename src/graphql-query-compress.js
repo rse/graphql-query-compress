@@ -23,7 +23,7 @@
 */
 
 /*  external dependency  */
-import Tokenizr from "tokenizr"
+const Tokenizr = require("tokenizr");
 
 /*  the API function: compress a GraphQL query string  */
 function compactGraphQLQuery (query) {
