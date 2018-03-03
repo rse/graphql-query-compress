@@ -63,6 +63,9 @@ module.exports = function (grunt) {
                         [ "browserify-derequire" ],
                         [ "browserify-header" ]
                     ],
+                    external: [
+                        "tokenizr"
+                    ],
                     browserifyOptions: {
                         standalone: "GraphQLQueryCompress",
                         debug: true
