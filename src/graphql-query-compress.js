@@ -31,7 +31,7 @@ function compactGraphQLQuery (query) {
 
     /*  configure lexical analysis  */
     lexer.rule(/#[^\r\n]*(?=\r?\n)/,                       (ctx, match) => { ctx.accept("comment") })
-    lexer.rule(/"(?:\\"|[^\r\n]+)*"/,                      (ctx, match) => { ctx.accept("string") })
+    lexer.rule(/"(?:\\"|[^"])*"/,                          (ctx, match) => { ctx.accept("string") })
     lexer.rule(/$[a-zA-Z_][a-zA-Z0-9_]*/,                  (ctx, match) => { ctx.accept("var") })
     lexer.rule(/[a-zA-Z_][a-zA-Z0-9_]*/,                   (ctx, match) => { ctx.accept("id") })
     lexer.rule(/[+-]?[0-9]*\.?[0-9]+(?:[eE][+-]?[0-9]+)?/, (ctx, match) => { ctx.accept("number") })
@@ -46,6 +46,7 @@ function compactGraphQLQuery (query) {
     lexer.rule(/:/,                                        (ctx, match) => { ctx.accept("colon") })
     lexer.rule(/./,                                        (ctx, match) => { ctx.accept("any") })
     lexer.input(query)
+    lexer.debug(false)
 
     /*  fetch all parsed tokens  */
     let tokens = lexer.tokens()
