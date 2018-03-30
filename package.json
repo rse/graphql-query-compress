@@ -46,6 +46,7 @@
         "eslint-plugin-node":             "6.0.1"
     },
     "scripts": {
-        "build": "grunt default"
+        "prepublishOnly":  "grunt default",
+        "build":           "grunt default"
     }
 }
