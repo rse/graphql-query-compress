@@ -44,18 +44,12 @@ module.exports = function (grunt) {
                     transform: [
                         [ "babelify", {
                             presets: [
-                                [ "env", {
+                                [ "@babel/preset-env", {
                                     "targets": {
-                                        "browser": [ "last 2 versions" ]
+                                        "browsers": "last 2 versions, not dead"
                                     }
-                                } ],
-                                "stage-3",
-                                "stage-2"
-                            ],
-                            plugins: [ [ "transform-runtime", {
-                                "polyfill":    true,
-                                "regenerator": true
-                            } ] ]
+                                } ]
+                            ]
                         } ]
                     ],
                     plugin: [
@@ -77,13 +71,11 @@ module.exports = function (grunt) {
                     transform: [
                         [ "babelify", {
                             presets: [
-                                [ "env", {
+                                [ "@babel/preset-env", {
                                     "targets": {
-                                        "node": 6.0
+                                        "node": "6.0"
                                     }
-                                } ],
-                                "stage-3",
-                                "stage-2"
+                                } ]
                             ]
                         } ]
                     ],
