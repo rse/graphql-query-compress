@@ -46,14 +46,14 @@ module.exports = function (grunt) {
                             presets: [
                                 [ "@babel/preset-env", {
                                     "targets": {
-                                        "browsers": "last 2 versions, not dead"
+                                        "browsers": "last 2 versions, > 1%, ie 11"
                                     }
                                 } ]
                             ]
-                        } ]
+                        } ],
+                        [ "uglifyify", { sourceMap: false, global: true } ]
                     ],
                     plugin: [
-                        [ "minifyify", { map: "graphql-query-compress.browser.map", output: "lib/graphql-query-compress.browser.map" } ],
                         [ "browserify-derequire" ],
                         [ "browserify-header" ]
                     ],
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
                             presets: [
                                 [ "@babel/preset-env", {
                                     "targets": {
-                                        "node": "6.0"
+                                        "node": "8.0.0"
                                     }
                                 } ]
                             ]
