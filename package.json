@@ -5,6 +5,7 @@
     "keywords":    [ "graphql", "query", "compress" ],
     "browser":     "./lib/graphql-query-compress.browser.js",
     "main":        "./lib/graphql-query-compress.node.js",
+    "types":       "./src/graphql-query-compress.d.ts",
     "license":     "MIT",
     "repository": {
         "type": "git",
@@ -18,29 +19,29 @@
     "homepage": "https://github.com/rse/graphql-query-compress",
     "bugs":     "https://github.com/rse/graphql-query-compress/issues",
     "dependencies": {
-        "tokenizr":                        "1.3.10"
+        "tokenizr":                        "1.4.0"
     },
     "devDependencies": {
         "grunt":                           "1.0.3",
-        "grunt-cli":                       "1.3.1",
-        "grunt-contrib-clean":             "1.1.0",
+        "grunt-cli":                       "1.3.2",
+        "grunt-contrib-clean":             "2.0.0",
         "grunt-eslint":                    "21.0.0",
         "grunt-browserify":                "5.3.0",
-        "browserify":                      "16.2.2",
-        "babelify":                        "9.0.0",
-        "@babel/core":                     "7.0.0",
-        "@babel/preset-env":               "7.0.0",
-        "minifyify":                       "7.3.5",
-        "browserify-header":               "0.9.4",
-        "browserify-derequire":            "0.9.6",
+        "browserify":                      "16.2.3",
+        "babelify":                        "10.0.0",
+        "@babel/core":                     "7.2.2",
+        "@babel/preset-env":               "7.2.3",
+        "uglifyify":                       "5.0.1",
+        "browserify-header":               "1.0.0",
+        "browserify-derequire":            "1.0.0",
         "browserify-shim":                 "3.8.14",
-        "babel-eslint":                    "9.0.0",
-        "eslint":                          "5.5.0",
+        "babel-eslint":                    "10.0.1",
+        "eslint":                          "5.10.0",
         "eslint-config-standard":          "12.0.0",
         "eslint-plugin-standard":          "4.0.0",
-        "eslint-plugin-promise":           "4.0.0",
+        "eslint-plugin-promise":           "4.0.1",
         "eslint-plugin-import":            "2.14.0",
-        "eslint-plugin-node":              "7.0.1"
+        "eslint-plugin-node":              "8.0.0"
     },
     "scripts": {
         "prepublishOnly":  "grunt default",
