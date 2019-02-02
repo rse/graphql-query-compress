@@ -19,7 +19,7 @@
     "homepage": "https://github.com/rse/graphql-query-compress",
     "bugs":     "https://github.com/rse/graphql-query-compress/issues",
     "dependencies": {
-        "tokenizr":                        "1.4.0"
+        "tokenizr":                        "1.5.2"
     },
     "devDependencies": {
         "grunt":                           "1.0.3",
@@ -30,18 +30,18 @@
         "browserify":                      "16.2.3",
         "babelify":                        "10.0.0",
         "@babel/core":                     "7.2.2",
-        "@babel/preset-env":               "7.2.3",
+        "@babel/preset-env":               "7.3.1",
         "uglifyify":                       "5.0.1",
         "browserify-header":               "1.0.0",
         "browserify-derequire":            "1.0.0",
         "browserify-shim":                 "3.8.14",
         "babel-eslint":                    "10.0.1",
-        "eslint":                          "5.10.0",
+        "eslint":                          "5.13.0",
         "eslint-config-standard":          "12.0.0",
         "eslint-plugin-standard":          "4.0.0",
         "eslint-plugin-promise":           "4.0.1",
-        "eslint-plugin-import":            "2.14.0",
-        "eslint-plugin-node":              "8.0.0"
+        "eslint-plugin-import":            "2.16.0",
+        "eslint-plugin-node":              "8.0.1"
     },
     "scripts": {
         "prepublishOnly":  "grunt default",
