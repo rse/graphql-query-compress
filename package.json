@@ -1,6 +1,6 @@
 {
     "name":        "graphql-query-compress",
-    "version":     "1.2.0",
+    "version":     "1.2.1",
     "description": "Compress a GraphQL Query String",
     "keywords":    [ "graphql", "query", "compress" ],
     "browser":     "./lib/graphql-query-compress.browser.js",
