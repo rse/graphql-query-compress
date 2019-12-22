@@ -27,7 +27,7 @@ import Tokenizr from "tokenizr"
 
 /*  the API function: compress a GraphQL query string  */
 function compactGraphQLQuery (query) {
-    let lexer = new Tokenizr()
+    const lexer = new Tokenizr()
 
     /*  configure lexical analysis  */
     lexer.rule(/#[^\r\n]*(?=\r?\n)/,                       (ctx, match) => { ctx.accept("comment") })
@@ -49,11 +49,11 @@ function compactGraphQLQuery (query) {
     lexer.debug(false)
 
     /*  fetch all parsed tokens  */
-    let tokens = lexer.tokens()
+    const tokens = lexer.tokens()
 
     /*  remove whitespace tokens at harmless positions  */
     let output = ""
-    let re = /^(?:brace|bracket|parenthesis|comma|colon)$/
+    const re = /^(?:brace|bracket|parenthesis|comma|colon)$/
     for (let i = 0; i < tokens.length; i++) {
         if (   tokens[i].type === "comment"
             || (   tokens[i].type === "ws"
