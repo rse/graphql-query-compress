@@ -75,4 +75,4 @@ function compactGraphQLQuery (query) {
 
 /*  export the API function  */
 module.exports = compactGraphQLQuery
-
+module.exports.default = compactGraphQLQuery
